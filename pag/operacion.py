@@ -21,5 +21,3 @@ Entonces,
 """)
 st.latex(r"z \cdot w = (a + bi)(c + di) = (ac - bd) + (ad + bc)i")
 
-
-
