@@ -7,7 +7,7 @@ e = st.Page("pag/ejemplo.py", title="Ejemplos", icon=":material/favorite:")
 t = st.Page("pag/test.py", title="Test", icon=":material/favorite:")
 t2 = st.Page("pag/test2.py", title="Test 2", icon=":material/favorite:")
 q = st.Page("pag/presentacion.py", title="¿Quién soy?", icon=":material/favorite:")
-pg = st.navigation({"Teoria":[p, n, o], "Test": [t, t2], "Creadora": [q]})
+pg = st.navigation({"Teoria":[p, n, o], "Test": [t], "Creadora": [q]})
 
 pg.run()
 
