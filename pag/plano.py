@@ -92,6 +92,7 @@ with st.container(border=True):
     st.latex(r"\arg(z) = \tan^{-1}\left(\frac{b}{a}\right), \quad a \neq 0")
 
 st.subheader("Casos de los argumentos")
+st.markdown("Para calcular el argumento de un número complejo, es necesario conocer los 8 casos y cómo varía la fórmula. A continuación, ingresa un número de la forma a+bi:")
 f1,f2= st.columns([1,1],vertical_alignment="top")
 with f1:
     x = st.number_input("Ingrese la parte real (a) :", value=0, key= "yuca")
@@ -157,5 +158,39 @@ with st.container(border=True):
         st.markdown("Asimismo, por la contribución de Leonhard Euler y la fórmula de Euler, surge la **Forma Polar** de un número complejo:")    
         st.latex(r"e^{i\alpha} = \cos\alpha + i\sin\alpha")
         st.latex(r"z = |z| e^{i\alpha}")
-    
+st.markdown("**EJEMPLOS**")
+st.markdown("""
+1. Observa 
+""")
+w1,w2,w3=st.columns([1,1,1])
+with w1:
+    st.markdown(":violet[**Forma Polar**]")
+    st.latex(r"z = 5e^{i\pi/3} \\")    
+    st.latex(r"z = 4e^{i\pi/4} \\")
+    st.latex(r"z = 2e^{i\pi/2} \\ ")
+with w2:
+    st.markdown(":violet[**Forma Trigonométrica**]")
+    st.latex(r"z = 5 \left( \cos\left(\frac{\pi}{3}\right) + i\sin\left(\frac{\pi}{3}\right) \right) \\")
+    st.latex(r"z = 4 \left( \cos\left(\frac{\pi}{4}\right) + i\sin\left(\frac{\pi}{4}\right) \right) \\")
+    st.latex(r"z = 2 \left( \cos\left(\frac{\pi}{2}\right) + i\sin\left(\frac{\pi}{2}\right) \right)")
+with w3:
+    st.markdown(":violet[**Forma Binómica**]")
+    a=st.latex(r"z \approx 2.5 + 4.33i\\")
+    b=st.latex(r"z \approx 2.83 + 2.83i")
+    c=st.latex(r"z = 0 + 2i ")
 
+data = {
+    "Forma Polar": ["2e^{i\\pi/4}", "5e^{i\\pi/3}", "2e^{i\\pi/2}"],
+    "Forma Trigonométrica": [
+        "z = 5 ( cos(\\pi/3) + i sin(\\pi/3) )",
+        "z = 4 ( cos(\\pi/4) + i sin(\\pi/4) )",
+        "z = 2 ( cos(\\pi/2) + i sin(\\pi/2) )"
+    ],
+    "Forma Binómica": [
+    r"$1 + i$", 
+    r"$2.5 + 4.33i$", 
+    r"$0 + 2i$"
+    ]
+}
+df = pd.DataFrame(data)
+st.table(df)

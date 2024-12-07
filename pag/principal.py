@@ -1,9 +1,13 @@
 import streamlit as st
 
 st.title("Números Complejos")
-
-st.image("https://images.jifo.co/122143261_1648595154570.png")
-
+s1,s2,s3=st.columns([1,4,1])
+with s1:
+    st.empty()
+with s2:
+    st.image("https://images.jifo.co/122143261_1648595154570.png")
+with s3:
+    st.empty()
 with st.container(border=True):
     st.subheader(":violet[Definición]")
     st.markdown("""
@@ -57,26 +61,26 @@ st.subheader("Hora de practicar!")
 c1, c2, c3 = st.columns([1,1,1],vertical_alignment="center")
 with c1:
     st.latex(r"z_1 = 3 + 4i")
-    n = st.number_input(" La parte real es:   ", min_value=-1000, max_value=80, value= 5)
+    n = st.number_input(" La parte real es:   ", min_value=-1000, max_value=80, value= 0)
     if st.button("Verificar"):
         if n==3:
-            st.markdown(f"CORRECTO!")
+            st.markdown(f"Muy bien!")
         else:
             st.markdown(f"No es {n} :c, inténtalo de nuevo.")
 with c2:
     st.latex(r"z_2 = -1 - 2i")
-    n = st.number_input(" La parte imaginaria es:   ", min_value=-100, max_value=100, value= 5)
+    n = st.number_input(" La parte imaginaria es:   ", min_value=-100, max_value=100, value= 0)
     if st.button("Verificar "):
         if n== -2:
-            st.markdown(f"CORRECTO!")
+            st.markdown(f"Excelente!")
         else:
             st.markdown(f"No es {n} :c, inténtalo de nuevo.")
 with c3:
     st.latex(r"z_3 = - 8i")
-    n = st.number_input(" La parte real es:   ", min_value=-100, max_value=1000, value=5)
+    n = st.number_input(" La parte real es:   ", min_value=-100, max_value=1000, value=0)
     if st.button("Verificar  "):
         if n== 0:
-            st.markdown(f"CORRECTO!")
+            st.markdown(f"Muy bien!")
         else:
             st.markdown(f"No es {n} :c, inténtalo de nuevo.")
 st.divider()
