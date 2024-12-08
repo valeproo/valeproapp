@@ -174,3 +174,24 @@ with c2:
         st.latex(r"""
         \frac{z_1}{z_2} = 2e^{i\pi/6}
         """)
+st.divider()
+with st.container(border=True):
+    st.subheader(":violet[Potencia]")
+    st.markdown("""
+    La potencia n-ésima z^n de un número complejo z es otro número complejo, tal que:
+
+    + Su módulo se obtiene de elevar a la n el módulo de z
+    
+    + Su argumento será n veces el argumento de z
+        """)
+    st.latex(r"z^n = |z|^n e^{i n \theta}")
+c1,c2=st.columns([1,1])
+with c1:
+    st.markdown("**EJEMPLO**")
+    st.markdown("1. Realiza la siguiente operación:")
+    st.latex(r"z^3 \quad, z = 2 e^{i \frac{\pi}{4}}")
+    
+with c2:
+    with st.expander("Ver solución"):
+        st.latex(r"z^3 = 2^3 e^{i 3 \cdot \frac{\pi}{4}}")
+        st.latex(r"z^3 = 8 e^{i \frac{3\pi}{4}}")

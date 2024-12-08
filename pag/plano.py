@@ -178,19 +178,3 @@ with w3:
     a=st.latex(r"z \approx 2.5 + 4.33i\\")
     b=st.latex(r"z \approx 2.83 + 2.83i")
     c=st.latex(r"z = 0 + 2i ")
-
-data = {
-    "Forma Polar": ["2e^{i\\pi/4}", "5e^{i\\pi/3}", "2e^{i\\pi/2}"],
-    "Forma Trigonométrica": [
-        "z = 5 ( cos(\\pi/3) + i sin(\\pi/3) )",
-        "z = 4 ( cos(\\pi/4) + i sin(\\pi/4) )",
-        "z = 2 ( cos(\\pi/2) + i sin(\\pi/2) )"
-    ],
-    "Forma Binómica": [
-    r"$1 + i$", 
-    r"$2.5 + 4.33i$", 
-    r"$0 + 2i$"
-    ]
-}
-df = pd.DataFrame(data)
-st.table(df)

@@ -71,13 +71,41 @@ with st.container(border=True):
 with st.container(border=True):
     q1,q2= st.columns([1,1])
     with q1:
-        st.markdown("¿En qué cuadrante se encuentra el siguiente número complejo?")
+        st.markdown("6. ¿En qué cuadrante se encuentra el siguiente número complejo?")
         st.latex("z = 7-4i")
         r9= st.empty()
     with q2:
         opi= ["I", "II", "III", "IV"]
         n0 = st.radio("Selecciona la opcion correcta:", options=opi)
+with st.container(border=True):  
+    st.markdown("7. ¿Qué número representa la siguiente gráfica?")
+    s1,s2= st.columns([1,1])
+    with s1:
+        opp= ["-4-6i", "-6-4i", "6-4i", "-4+6i"]
+        n9 = st.radio("selecciona la opcion correcta:", options=opp)
+        r10= st.empty()
+    with s2:
+        x=[-4]
+        y=[6]
+        fig, ax = plt.subplots()
+        ax.quiver(0,0,x[0],y[0], angles="xy", scale_units="xy", scale=1)
+        ax.grid()
+        ax.set_xlabel("Im(z)")
+        ax.set_ylabel("Re(z)")
+        ax.axhline(0,c="gray")
+        ax.axvline(0,c="gray")
+        ax.set_xlim(-8,8)
+        ax.set_ylim(-8,8)
+        st.pyplot(fig)
+with st.container(border=True):
+    s1,s2=st.columns([1,1])
+    with s1:
+        st.markdown("8. ¿Cuál es la forma binómica del siguiente número complejo?")
+        st.latex(r"z = 2e^{i\frac{\pi}{6}}")
         
+    with s2:
+        op=st.selectbox("Seleciona la opción correcta:", options=["3+i","1+i","√3+i","√3-i"])
+        r11=st.empty()
 if st.button("Verificar"):
     ptos = 0
     if n1 == 11:
@@ -125,5 +153,20 @@ if st.button("Verificar"):
         r9.success("Es correcto 💗")
     else:
         r9.error("Incorrecto😓")
+    if n9==opp[3]:
+        ptos+=1
+        r10.success("Es correcto 💗")
+    else:
+        r10.error("Incorrecto😓")
+    if op=="√3+i":
+        ptos+=1
+        r11.success("Es correcto 💗")
+    else:
+        r11.error("Incorrecto😓")
+    if ptos<=3:
+        st.info(f"Obtuviste {ptos} puntos😓, debes seguir practicando.")
+    elif ptos<=5:
+        st.info(f"Obtuviste {ptos} puntos💔, lo has hecho bien pero debes seguir practicando.")
+    else:
+        st.info(f"Obtuviste {ptos} puntos 💗, lo has hecho muy bien, ya eres un pro en complejos ")
 
-    st.info(f"Obtuviste {ptos} puntos, cancela mejor.")
